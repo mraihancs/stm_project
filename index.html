@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Saidpur Tuition Media</title>
+<link rel="shortcut icon" href="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;color:#1a1a2e;background:#fff;}
+a{text-decoration:none;color:inherit;}
+
+
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 60px;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.08);position:sticky;top:0;z-index:100;}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo-icon{width:46px;height:46px;}
+.logo-text{line-height:1.15;}
+.logo-text .brand{font-size:1.15rem;font-weight:800;color:#1a1a2e;}
+.logo-text .sub{font-size:.75rem;color:#2e7d32;font-weight:600;}
+.logo-text .tagline{font-size:.6rem;color:#555;}
+.nav-links{display:flex;gap:28px;align-items:center;list-style:none;}
+.nav-links a{font-size:.88rem;font-weight:500;color:#333;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:#2e7d32;}
+.nav-links a.active{border-bottom:2px solid #2e7d32;padding-bottom:2px;}
+.btn-post{background:#2e7d32;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-weight:600;font-size:.88rem;cursor:pointer;transition:background .2s;}
+.btn-post:hover{background:#1b5e20;}
+
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0d1b2a 60%,#1a2e1a 100%);color:#fff;padding:70px 60px 0;display:flex;gap:40px;align-items:flex-end;min-height:460px;position:relative;overflow:hidden;}
+.hero-content{flex:1;z-index:2;padding-bottom:50px;}
+.hero-content h1{font-size:2.6rem;font-weight:800;line-height:1.2;}
+.hero-content h1 span{color:#4caf50;}
+.hero-content .bangla{font-size:1.4rem;color:#a5d6a7;margin:8px 0 14px;font-weight:500;}
+.hero-content p{color:#b0bec5;font-size:.93rem;max-width:360px;line-height:1.6;}
+.hero-btns{display:flex;gap:14px;margin-top:28px;}
+.btn-search{background:#2e7d32;color:#fff;border:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.9rem;cursor:pointer;display:flex;align-items:center;gap:8px;}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);padding:12px 24px;border-radius:8px;font-weight:600;font-size:.9rem;cursor:pointer;display:flex;align-items:center;gap:8px;}
+.stats{display:flex;gap:32px;margin-top:36px;}
+.stat .num{font-size:1.4rem;font-weight:800;}
+.stat .lbl{font-size:.75rem;color:#90a4ae;}
+.hero-img{flex:1;display:flex;justify-content:flex-end;align-items:flex-end;z-index:2;}
+.hero-img img{max-height:380px;object-fit:cover;border-radius:12px 12px 0 0;}
+.hero-green-bar{position:absolute;bottom:0;left:0;right:0;height:12px;background:#4caf50;}
+/* Banner */
+
+.banner{
+  margin-left:6%;
+}
+
+/* banner */
+/* SEARCH BOX */
+.search-box{background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.12);padding:28px 36px;margin:32px 60px;position:relative;}
+.search-box h2{font-size:1.2rem;font-weight:700;margin-bottom:18px;}
+.search-row{display:flex;gap:14px;align-items:flex-end;}
+.s-field{flex:1;}
+.s-field label{display:block;font-size:.78rem;color:#555;margin-bottom:6px;font-weight:500;}
+.s-field select{width:100%;padding:10px 14px;border:1.5px solid #ddd;border-radius:8px;font-size:.88rem;appearance:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23555' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat right 12px center #fff;cursor:pointer;}
+.btn-search-dark{background:#1a1a2e;color:#fff;border:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.88rem;cursor:pointer;display:flex;align-items:center;gap:8px;white-space:nowrap;}
+.popular{margin-top:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.popular span{font-size:.8rem;font-weight:600;color:#555;}
+.tag{background:#f5f5f5;border:1px solid #e0e0e0;border-radius:20px;padding:4px 14px;font-size:.78rem;color:#333;cursor:pointer;transition:all .2s;}
+.tag:hover{background:#2e7d32;color:#fff;border-color:#2e7d32;}
+
+/* FEATURES */
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:40px 60px;}
+.feat-card{background:#fff;border:1px solid #eee;border-radius:14px;padding:26px 20px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.05);}
+.feat-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.4rem;}
+.feat-card h3{font-size:.95rem;font-weight:700;margin-bottom:8px;}
+.feat-card p{font-size:.8rem;color:#666;line-height:1.5;}
+
+/* TUTORS */
+.section{padding:10px 60px 50px;}
+.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;}
+.section-header h2{font-size:1.4rem;font-weight:800;}
+.view-all{color:#2e7d32;font-size:.88rem;font-weight:600;}
+.tutors-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+.tutor-card{border:1px solid #eee;border-radius:14px;padding:22px 16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:box-shadow .2s;position:relative;}
+.tutor-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.1);}
+.bookmark{position:absolute;top:12px;right:12px;color:#bbb;font-size:.9rem;cursor:pointer;}
+.tutor-avatar{width:70px;height:70px;border-radius:50%;object-fit:cover;margin:0 auto 10px;display:block;border:3px solid #e8f5e9;}
+.tutor-name{font-size:.95rem;font-weight:700;}
+.tutor-subject{font-size:.8rem;color:#2e7d32;font-weight:600;margin:2px 0;}
+.tutor-uni{font-size:.75rem;color:#666;margin-bottom:4px;}
+.tutor-loc{font-size:.75rem;color:#888;display:flex;align-items:center;justify-content:center;gap:4px;margin-bottom:8px;}
+.stars{color:#f59e0b;font-size:.8rem;}
+.rating-txt{color:#666;font-size:.75rem;}
+.btn-profile{width:100%;margin-top:12px;padding:8px;border:1.5px solid #2e7d32;background:#fff;color:#2e7d32;border-radius:8px;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;}
+.btn-profile:hover{background:#2e7d32;color:#fff;}
+
+/* CTA BANNER */
+.cta-banner{background:#0d1b2a;color:#fff;margin:10px 60px 50px;border-radius:16px;padding:44px 50px;display:flex;align-items:center;gap:40px;}
+.cta-img{font-size:5rem;}
+.cta-text h2{font-size:1.6rem;font-weight:800;margin-bottom:8px; }
+.cta-text p{color:#90a4ae;font-size:.9rem; }
+.btn-join{background:#4caf50;color:#fff;border:none;padding:13px 26px;border-radius:8px;font-weight:700;font-size:.95rem;cursor:pointer;display:flex;align-items:center;gap:8px;margin-left:auto;white-space:nowrap;}
+
+/* FOOTER */
+footer{background:#f8f9fa;border-top:1px solid #eee;padding:50px 60px 20px;}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1.4fr;gap:40px;margin-bottom:36px;}
+.footer-brand p{font-size:.82rem;color:#666;line-height:1.6;margin:12px 0 16px;}
+.footer-social{display:flex;gap:10px; margin-top: 30px;}
+.social-btn{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;cursor:pointer;}
+.fb{background:#1877f2;}.msg{background:#00b2ff;}.wa{background:#25d366;}.yt{background:#ff0000;}
+.footer-col h4{font-size:.9rem;font-weight:700;margin-bottom:14px;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{font-size:.82rem;color:#555;margin-bottom:8px;cursor:pointer;}
+.footer-col ul li:hover{color:#2e7d32;}
+.contact-item{display:flex;align-items:center;gap:8px;font-size:.82rem;color:#555;margin-bottom:8px;}
+.contact-item i{color:#2e7d32;width:16px;}
+.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid #eee;font-size:.78rem;color:#888;}
+
+/* Avatar placeholders */
+.avatar-placeholder{width:70px;height:70px;border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:700;color:#fff;border:3px solid #e8f5e9;}
+
+@media(max-width:900px){
+  nav{padding:12px 20px;}
+  .hero{padding:40px 20px 0;flex-direction:column;}
+  .hero-img{display:none;}
+  .search-box{margin:20px;}
+  .features{grid-template-columns:repeat(2,1fr);padding:20px;}
+  .tutors-grid{grid-template-columns:repeat(2,1fr);}
+  .section{padding:10px 20px 30px;}
+  .cta-banner{margin:10px 20px 30px;flex-wrap:wrap;}
+  footer{padding:30px 20px 16px;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <svg class="logo-icon" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="23" cy="23" r="23" fill="#e8f5e9"/>
+      <path d="M23 8 C18 14, 10 16, 10 22 C10 28, 16 32, 23 36 C30 32, 36 28, 36 22 C36 16, 28 14, 23 8Z" fill="#2e7d32"/>
+      <path d="M16 24 L23 18 L30 24" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <rect x="19" y="24" width="8" height="6" rx="1" fill="#fff"/>
+    </svg>
+    <div class="logo-text">
+      <div class="brand">Saidpur<br/><span style="color:#2e7d32;">Tuition Media</span></div>
+      <div class="tagline">জ্ঞানের সাথে, আলোর পথে</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#" class="active" onclick="redirect(event)">Home</a></li>
+    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdJArF5N7iRqjmuL-H7SNnsejG4BO_1uXBhAi-XvggDcvXtVA/viewform" >Find a Tutor</a></li>
+    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScMt3UZScOGBDLGDX16CJUjZSlVoL8T28L_0fr0SMmm4FJlrA/viewform">Become a Tutor</a></li>
+    <li><a href="#" onclick="redirect(event)">Tuition Posts</a></li>
+    <li><a href="#" onclick="redirect(event)">About Us</a></li>
+    <li><a href="https://wa.me/message/HHKUTMNKXXEHL1">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/message/HHKUTMNKXXEHL1"><button class="btn-post">Registration</button></a>
+</nav>
+
+<!-- HERO -->
+<!-- <div class="hero">
+  <div class="hero-content">
+    <h1>Find the Right Tutor<br/><span>in Saidpur</span></h1>
+    <div class="bangla">জ্ঞানের সাথে, আলোর পথে</div>
+    <p>Saidpur Tuition Media is a platform that connects students with qualified and trusted tutors in Saidpur.</p>
+    <div class="hero-btns">
+      <button class="btn-search" onclick="redirect(event)"><i class="fa fa-search"></i> Search Tutor</button>
+      <button class="btn-outline" onclick="redirect(event)"><i class="fa fa-user-plus"></i> Become a Tutor</button>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">500+</div><div class="lbl">Trusted Tutors</div></div>
+      <div class="stat"><div class="num">1000+</div><div class="lbl">Happy Students</div></div>
+      <div class="stat"><div class="num">20+</div><div class="lbl">Subjects</div></div>
+      <div class="stat"><div class="num">10+</div><div class="lbl">Areas Covered</div></div>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="/mnt/user-data/uploads/1000060237.jpg" alt="Tutor and student" onerror="this.style.display='none'"/>
+  </div>
+  <div class="hero-green-bar"></div>
+</div> -->
+<div class="banner">
+  <img src="./Screenshot 2026-06-15 123931.png" alt="" srcset="">
+</div>
+<!-- SEARCH BOX -->
+<div class="search-box">
+  <h2>Find Your Perfect Tutor</h2>
+  <div class="search-row">
+    <div class="s-field">
+      <label>Class / Level</label>
+      <select onclick="redirect(event)"><option>All Classes</option></select>
+    </div>
+    <div class="s-field">
+      <label>Subject</label>
+      <select onclick="redirect(event)"><option>All Subjects</option></select>
+    </div>
+    <div class="s-field">
+      <label>Area in Saidpur</label>
+      <select onclick="redirect(event)"><option>All Areas</option></select>
+    </div>
+    <button class="btn-search-dark" onclick="redirect(event)"><i class="fa fa-search"></i> Search Tutor</button>
+  </div>
+  <div class="popular">
+    <span>Popular Searches:</span>
+    <span class="tag" onclick="redirect(event)">Math</span>
+    <span class="tag" onclick="redirect(event)">Physics</span>
+    <span class="tag" onclick="redirect(event)">Chemistry</span>
+    <span class="tag" onclick="redirect(event)">English</span>
+    <span class="tag" onclick="redirect(event)">HSC</span>
+    <span class="tag" onclick="redirect(event)">Admission</span>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="features">
+  <div class="feat-card">
+    <div class="feat-icon" style="background:#e8f5e9;color:#2e7d32;"><i class="fa fa-shield-alt"></i></div>
+    <h3>Trusted &amp; Verified Tutors</h3>
+    <p>All tutors are verified for quality and reliability.</p>
+  </div>
+  <div class="feat-card">
+    <div class="feat-icon" style="background:#e8eaf6;color:#3949ab;"><i class="fa fa-book-open"></i></div>
+    <h3>Wide Range of Subjects</h3>
+    <p>Academic, Admission, Language and many more.</p>
+  </div>
+  <div class="feat-card">
+    <div class="feat-icon" style="background:#fce4ec;color:#c2185b;"><i class="fa fa-map-marker-alt"></i></div>
+    <h3>Local &amp; Convenient</h3>
+    <p>Find tutors near your home anywhere in Saidpur.</p>
+  </div>
+  <div class="feat-card">
+    <div class="feat-icon" style="background:#fff8e1;color:#f57c00;"><i class="fa fa-users"></i></div>
+    <h3>For Every Student</h3>
+    <p>From Class 1 to University level – we've got you covered.</p>
+  </div>
+</div>
+
+<!-- FEATURED TUTORS -->
+<div class="section">
+  <div class="section-header">
+    <h2>Featured Tutors</h2>
+    <a href="#" class="view-all" onclick="redirect(event)">View All Tutors →</a>
+  </div>
+  <div class="tutors-grid">
+
+        <!-- Tutor 2 -->
+    <div class="tutor-card">
+      <i class="fa fa-bookmark bookmark"></i>
+      <div class="avatar-placeholder" style="background:linear-gradient(135deg,#7b1fa2,#ce93d8);">M</div>
+      <div class="tutor-name">Mahfuzar Rahman</div>
+      <div class="tutor-subject">English</div>
+      <div class="tutor-uni">BAUST</div>
+      <div class="tutor-loc"><i class="fa fa-map-marker-alt"></i> Saidpur</div>
+      <div><span class="stars">★★★★★</span> <span class="rating-txt">5.0 (8)</span></div>
+      <button class="btn-profile" onclick="redirect(event)">View Profile</button>
+    </div>
+
+    <!-- Tutor 1 -->
+    <div class="tutor-card">
+      <i class="fa fa-bookmark bookmark"></i>
+      <div class="avatar-placeholder" style="background:linear-gradient(135deg,#2e7d32,#66bb6a);">S</div>
+      <div class="tutor-name">Sajjad Ul Alim</div>
+      <div class="tutor-subject">Fisheries</div>
+      <div class="tutor-uni">HSTU</div>
+      <div class="tutor-loc"><i class="fa fa-map-marker-alt"></i> Saidpur</div>
+      <div><span class="stars">★★★★★</span> <span class="rating-txt">5.0 (12)</span></div>
+      <button class="btn-profile" onclick="redirect(event)">View Profile</button>
+    </div>
+
+
+
+    <!-- Tutor 3 -->
+    <div class="tutor-card">
+      <i class="fa fa-bookmark bookmark"></i>
+      <div class="avatar-placeholder" style="background:linear-gradient(135deg,#0277bd,#4fc3f7);">M</div>
+      <div class="tutor-name">Moksadul Islam Bipul</div>
+      <div class="tutor-subject">Mechanical Engineering</div>
+      <div class="tutor-uni">BAUST, ME</div>
+      <div class="tutor-loc"><i class="fa fa-map-marker-alt"></i> Saidpur</div>
+      <div><span class="stars">★★★★★</span> <span class="rating-txt">4.8 (15)</span></div>
+      <button class="btn-profile" onclick="redirect(event)">View Profile</button>
+    </div>
+
+    <!-- Tutor 4 -->
+    <div class="tutor-card">
+      <i class="fa fa-bookmark bookmark"></i>
+      <div class="avatar-placeholder" style="background:linear-gradient(135deg,#e65100,#ffcc80);">N</div>
+      <div class="tutor-name">Noornobi Islam</div>
+      <div class="tutor-subject">Mechanical Engineering</div>
+      <div class="tutor-uni">BAUST, ME</div>
+      <div class="tutor-loc"><i class="fa fa-map-marker-alt"></i> Saidpur</div>
+      <div><span class="stars">★★★★★</span> <span class="rating-txt">4.7 (10)</span></div>
+      <button class="btn-profile" onclick="redirect(event)">View Profile</button>
+    </div>
+
+    <!-- Tutor 5 -->
+    <div class="tutor-card">
+      <i class="fa fa-bookmark bookmark"></i>
+      <div class="avatar-placeholder" style="background:linear-gradient(135deg,#b71c1c,#ef9a9a);">J</div>
+      <div class="tutor-name">Junayed Ali</div>
+      <div class="tutor-subject">MBBS</div>
+      <div class="tutor-uni">Shaheed Monsur Ali Medical College</div>
+      <div class="tutor-loc"><i class="fa fa-map-marker-alt"></i> Saidpur</div>
+      <div><span class="stars">★★★★★</span> <span class="rating-txt">5.0 (6)</span></div>
+      <button class="btn-profile" onclick="redirect(event)">View Profile</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-img">📝📚</div>
+  <div class="cta-text">
+    <h2>Become a Tutor Today!</h2>
+    <p>Join Saidpur Tuition Media and start your journey as a tutor.<br/>Help others learn and grow with you.</p>
+  </div>
+  <button class="btn-join" onclick="redirect(event)"><i class="fa fa-user-plus"></i> Join as a Tutor</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="logo" style="margin-bottom:10px;">
+        <svg width="38" height="38" viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="23" fill="#e8f5e9"/><path d="M23 8 C18 14, 10 16, 10 22 C10 28, 16 32, 23 36 C30 32, 36 28, 36 22 C36 16, 28 14, 23 8Z" fill="#2e7d32"/><path d="M16 24 L23 18 L30 24" stroke="#fff" stroke-width="2" stroke-linecap="round"/><rect x="19" y="24" width="8" height="6" rx="1" fill="#fff"/></svg>
+        <div class="logo-text"><div class="brand">Saidpur<br/><span style="color:#2e7d32;">Tuition Media</span></div><div class="tagline">জ্ঞানের সাথে, আলোর পথে</div></div>
+      </div>
+      <p>Connecting students with the right tutors in Saidpur. Together, let's build a brighter future through quality education.</p>
+      <div class="footer-social">
+        <div class="social-btn fb" onclick="redirect(event)"><i class="fab fa-facebook-f"></i></div>
+        <div class="social-btn msg" onclick="redirect(event)"><i class="fab fa-facebook-messenger"></i></div>
+        <div class="social-btn wa" onclick="redirect(event)"><i class="fab fa-whatsapp"></i></div>
+        <div class="social-btn yt" onclick="redirect(event)"><i class="fab fa-youtube"></i></div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li onclick="redirect(event)">Home</li>
+        <li onclick="redirect(event)">Find a Tutor</li>
+        <li onclick="redirect(event)">Become a Tutor</li>
+        <li onclick="redirect(event)">Tuition Posts</li>
+        <li onclick="redirect(event)">About Us</li>
+        <li onclick="redirect(event)">Contact</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>For Students</h4>
+      <ul>
+        <li onclick="redirect(event)">How It Works</li>
+        <li onclick="redirect(event)">Find a Tutor</li>
+        <li onclick="redirect(event)">Subjects</li>
+        <li onclick="redirect(event)">Tuition Posts</li>
+        <li onclick="redirect(event)">FAQ</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>For Tutors</h4>
+      <ul>
+        <li onclick="redirect(event)">Become a Tutor</li>
+        <li onclick="redirect(event)">Tutor Guidelines</li>
+        <li onclick="redirect(event)">Benefits</li>
+        <li onclick="redirect(event)">Resources</li>
+        <li onclick="redirect(event)">Support</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="contact-item"><i class="fa fa-phone"></i> 01560031599</div>
+      <div class="contact-item"><a href="https://wa.me/message/HHKUTMNKXXEHL1"><i class="fab fa-whatsapp"></i> 01560031599</a></div>
+      <div class="contact-item"><i class="fa fa-map-marker-alt"></i> Saidpur, Nilphamari, Bangladesh</div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">© 2026 <a href="www.facebook.com/maruf.raihan.mr">Saidpur Tuition Media.</a>  All rights reserved.</div>
+</footer>
+
+<script>
+function redirect(e){
+  e.preventDefault();
+  window.open('https://www.facebook.com/share/1EtrcB2d6L/','_blank');
+}
+// Make all buttons and links redirect
+document.querySelectorAll('button,a,.tag,.social-btn,.footer-col li,.contact-item,.tutor-card').forEach(el=>{
+  el.style.cursor='pointer';
+});
+</script>
+</body>
+</html>
